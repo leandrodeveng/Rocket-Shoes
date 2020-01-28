@@ -1,0 +1,73 @@
+
+##Criar arquivo do editor config##
+-->Caso extenção do editor config não esteja instalada, instalar.
+-->Criar arquivo .editorconfig na raiz do projeto, uzando o botão direito na raiz.
+-->Deixar as configurações da seguinte maneira:
+##########################################
+root = true
+
+[*]
+end_of_line = lf
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+###########################################
+
+
+##Eslint##
+-->Instalar eslint, como dependância de desenvolvimento, utilizando o comando: yarn add eslint -D
+-->Configurar o eslint utilizando o comando: yarn eslint --init
+-->Seguir os passos de configurações desejados.
+-->Após instalação, excluir package-lock-json e rodar o comando: yarn
+
+##Prettier##
+-->Instalar dependencias do prettier usando o seguinte comando: yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+-->Configurar arquivo .eslintrc.js da seguinte maneira:
+#########################################################
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+    'prettier/react',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    'prettier',
+  ],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [
+      'warn',
+      { extensions: ['.jsx', '.js'] }
+    ],
+    'import/prefer-default-export': 'off'
+  },
+};
+#########################################################
+
+-->Criar arquivo .prettierrc na raiz do projeto e configurar da seguinte maneira:
+################################################
+{
+  "singleQuote": true,
+  "trailingComma": "es5"
+}
+################################################
