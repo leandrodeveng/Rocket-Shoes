@@ -1,10 +1,10 @@
 export function addToCart(product) {
-  return { type: 'ADD_TO_CART', product };
+  return { type: '@Cart/ADD', product };
 }
 
 export function removeFromCart(id) {
   return {
-    type: 'REMOVE_FROM_CART',
+    type: '@Cart/REMOVE',
     id,
   };
 }
