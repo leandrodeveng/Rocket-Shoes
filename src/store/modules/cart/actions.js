@@ -1,5 +1,9 @@
-export function addToCart(product) {
-  return { type: '@Cart/ADD', product };
+export function addToCartRequest(id) {
+  return { type: '@Cart/ADD_REQUEST', id };
+}
+
+export function addToCartSuccess(id) {
+  return { type: '@Cart/ADD_SUCCESS', id };
 }
 
 export function removeFromCart(id) {
